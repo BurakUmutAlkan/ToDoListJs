@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List App</title>
+    <link rel="shortcut icon" href="#" />
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        header {
+            margin-left: 1rem;
+        }
+
+        section {
+            margin-left: 1rem;
+        }
+
+        button {
+            background-color: cornflowerblue;
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 5%;
+        }
+
+        input {
+            padding: 0.4rem;
+            margin-right: 0.5rem;
+        }
+
+        ul {
+            padding: 0;
+            padding-top: 1rem;
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>To-Do List</h1>
+    </header>
+
+    <section>
+        <input type="text" id="txtTask" />
+        <button onclick="addTask(event)">Add Task</button>
+
+        <ul id="taskList"></ul>
+    </section>
+
+    <script>
+        let taskList = document.getElementById('taskList');
+
+        function addTask(event) {
+            event.preventDefault();
+
+            let taskName = document.getElementById('txtTask').value;
+
+            var taskListMember = document.createElement('li');
+
+            taskListMember.innerHTML = '<input type="checkbox" id="chb" /><label for="checkbox1">' + taskName + '</label>';
+
+            taskList.append(taskListMember);
+        }
+    </script>
+</body>
+</html>
